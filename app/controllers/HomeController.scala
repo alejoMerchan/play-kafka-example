@@ -45,6 +45,6 @@ class HomeController @Inject()(cc: ControllerComponents)(implicit ec:ExecutionCo
 
   def kafkaConsumerSettings:ConsumerSettings[String, String] =
     ConsumerSettings(actorSystem,new StringDeserializer,new StringDeserializer)
-      .withBootstrapServers("localhost:2181").withGroupId("ulp-ch03-3.3")
+      .withBootstrapServers("localhost:9092").withGroupId("ulp-ch03-3.3")
       .withProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG,"earliest")
 }
